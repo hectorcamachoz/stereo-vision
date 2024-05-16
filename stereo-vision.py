@@ -251,6 +251,7 @@ def plot_coordinates(final_coords: list)->None:
     
     for i in range(len(final_coords)):
         ax.scatter( final_coords[i][0], final_coords[i][1], final_coords[i][2], c='r', marker='o')
+   # ax.axis('equal')
     plt.show()
     
 def run_pipeline()-> None:
@@ -300,6 +301,7 @@ def run_pipeline()-> None:
         show_image(img_r_copy, 'Right image')
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
+            left_clk_block = False
             break
     
     cv2.destroyAllWindows()
